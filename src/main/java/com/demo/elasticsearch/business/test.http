@@ -1,0 +1,174 @@
+################################################################################
+To be used inplace of Postman to test the API's
+################################################################################
+
+POST http://localhost:8082/elasticapi
+Content-Type: application/json
+
+{
+  "key": "11",
+  "index": "info",
+  "version": 1,
+  "name": "Radhika Sharma",
+  "age": 100,
+  "designation": "Entrepreneur",
+  "company": "Startup"
+}
+
+###
+
+GET http://localhost:8082/elasticapi/findById/info/11
+Content-Type: application/json
+
+###
+
+POST http://localhost:8082/elasticapi/find/info/3
+Content-Type: application/json
+
+[
+  "name",
+  "key",
+  "age"
+]
+
+###
+
+GET http://localhost:8082/elasticapi/exists/info/3
+Content-Type: application/json
+
+###
+
+DELETE http://localhost:8082/elasticapi/delete/info/1
+Content-Type: application/json
+
+###
+
+PUT http://localhost:8082/elasticapi/update/info/3
+Content-Type: application/json
+
+{
+  "key": "3",
+  "index": "info",
+  "version": 1,
+  "name": "Saharsh Rastogi",
+  "age": 23,
+  "designation": "Management Student",
+  "company": "IIM-Trichy"
+}
+
+###
+
+PUT http://localhost:8082/elasticapi/update/info/7
+Content-Type: application/json
+
+{
+  "key": "7",
+  "index": "info",
+  "version": 2,
+  "name": "Vaibhav Malik",
+  "age": 100,
+  "designation": "Entrepreneur",
+  "company": "Self Employeed"
+}
+
+###
+
+POST http://localhost:8082/elasticapi/bulkinsert
+Content-Type: application/json
+
+[
+  {
+    "key": "31",
+    "index": "info",
+    "version": 1,
+    "name": "Arpit Srivastava",
+    "age": 23,
+    "designation": "Software Developer",
+    "company": "Navis"
+  },
+  {
+    "key": "32",
+    "index": "info",
+    "version": 1,
+    "name": "Manas Sinha",
+    "age": 23,
+    "designation": "Software Developer",
+    "company": "Adobe"
+  },
+  {
+    "key": "33",
+    "index": "info",
+    "version": 1,
+    "name": "Vaibhav Malik",
+    "age": 23,
+    "designation": "Entrepreneur",
+    "company": "Remark"
+  }
+]
+
+###
+
+GET http://localhost:8082/elasticapi/findById/info/31
+Content-Type: application/json
+
+###
+
+GET http://localhost:8082/elasticapi/findById/info/32
+Content-Type: application/json
+
+###
+
+GET http://localhost:8082/elasticapi/findById/info/33
+Content-Type: application/json
+
+###
+
+
+POST http://localhost:8082/elasticapi/bulkinsert
+Content-Type: application/json
+
+
+[
+  {
+    "key": "31",
+    "index": "info",
+    "version": 1,
+    "name": "Arpit Srivastava",
+    "age": 23,
+    "designation": "Software Developer",
+    "company": "Amazon"
+  },
+  {
+    "key": "32",
+    "index": "info",
+    "version": 1,
+    "name": "Manas Sinha",
+    "age": 23,
+    "designation": "Data Analyst",
+    "company": "Adobe"
+  },
+  {
+    "key": "33",
+    "index": "info",
+    "version": 1,
+    "name": "Vaibhav Malik",
+    "age": 23,
+    "designation": "CEO",
+    "company": "Remark Enterprises"
+  }
+]
+
+###
+
+POST http://localhost:8082/elasticapi/multiget
+
+ 31,32,33
+
+###
+
+GET http://localhost:8082/elasticapi/search/name/Vaibhav Malik
+
+###
+
+
+
